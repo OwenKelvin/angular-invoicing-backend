@@ -1,0 +1,16 @@
+{
+    "name": "okotieno/phone",
+    "description": "Laravel Package for Permissions and Roles",
+    "authors": [
+        {
+            "name": "okotieno",
+            "email": "okotieno@yahoo.com"
+        }
+    ],
+    "require": {},
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}

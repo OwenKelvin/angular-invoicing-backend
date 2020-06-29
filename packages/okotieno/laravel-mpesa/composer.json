@@ -1,0 +1,16 @@
+{
+    "name": "okotieno/m-pesa",
+    "description": "Laravel Package M-PESA",
+    "authors": [
+        {
+            "name": "okotieno",
+            "email": "okotieno@yahoo.com"
+        }
+    ],
+    "require": {},
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
