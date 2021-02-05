@@ -8,6 +8,11 @@
         }
     ],
     "require": {},
+    "autoload": {
+        "psr-4": {
+            "Okotieno\\PermissionsAndRoles\\": "src/"
+        }
+    },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"

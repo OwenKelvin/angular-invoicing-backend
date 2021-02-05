@@ -1,6 +1,6 @@
 <?php
 
-namespace Okotieno\MPesa\Middleware;
+namespace Okotieno\MPesa\Middlewares;
 
 use Closure;
 use Illuminate\Support\Facades\Log;
