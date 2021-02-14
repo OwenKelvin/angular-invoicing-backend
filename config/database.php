@@ -2,6 +2,22 @@
 
 use Illuminate\Support\Str;
 
+// Below will be used for aws upload
+$hostName = env('DB_HOST', '127.0.0.1');
+$databaseName = env('DB_DATABASE', 'forge');
+$userName = env('DB_USERNAME', 'forge');
+$port = env('DB_PORT', '3306');
+$password = env('DB_PASSWORD', '');
+
+if(env('RDS_HOSTNAME') !== null) {
+    $hostName = env('RDS_HOSTNAME', '127.0.0.1');
+    $databaseName = env('RDS_DB_NAME', 'forge');
+    $userName = env('RDS_USERNAME', 'forge');
+    $port = env('RDS_PORT', '3306');
+    $password = env('RDS_PASSWORD', '');
+}
+
+
 return [
 
     /*
@@ -46,11 +62,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => $hostName,
+            'port' => $port,
+            'database' => $databaseName,
+            'username' => $userName,
+            'password' => $password,
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

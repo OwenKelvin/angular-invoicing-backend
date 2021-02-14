@@ -24,8 +24,6 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/password/reset', 'ResetPasswordController@reset');
 });
 
-
-
 Route::middleware('auth:api')->resource('/products', 'ProductController');
 
 Route::middleware('auth:api')->resource('/sellers', 'SellerController');
@@ -37,6 +35,7 @@ Route::middleware('auth:api')->resource('/sales', 'SaleController');
 Route::middleware('auth:api')->get('/reports/sales', 'ReportsController@sales');
 
 Route::middleware('auth:api')->resource('/products/{product}/inventory-quantity', 'InventoryAdjustmentController');
+Route::middleware('auth:api')->get('/products/{product}/inventory-changes-statement', 'InventoryMovementStatementController@index');
 
 Route::middleware('auth:api')->get('/users/auth', 'AuthController@authenticatedUser');
 Route::middleware('auth:api')->get('/users/auth/logout', 'AuthController@logout');

@@ -17,7 +17,7 @@ class SoldProduct extends Model
         'selling_price_currency'
     ];
     public function getProductNameAttribute() {
-        return $this->product->name;
+        return $this->product ? $this->product->name : null;
     }
     public function product() {
         return $this->belongsTo(Product::class);
