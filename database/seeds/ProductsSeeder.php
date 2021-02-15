@@ -166,7 +166,7 @@ class ProductsSeeder extends Seeder
                     'quantity' => $product['quantity'],
                     'unit_price' => $product['buying_price'],
                     'currency' => 'KES',
-                    'purchase_date' => '2020-02-13'
+                    'purchase_date' => '2021-02-15'
                 ]);
             }
         }
