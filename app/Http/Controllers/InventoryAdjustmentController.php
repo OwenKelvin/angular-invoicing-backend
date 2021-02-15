@@ -18,6 +18,7 @@ class InventoryAdjustmentController extends Controller
     {
         $noOfPurchases = $product->purchases()->select('quantity')->get()->sum('quantity');
         $noOfSales = $product->sales()->select('quantity')->get()->sum('quantity');
+
         return $noOfPurchases - $noOfSales;
     }
 

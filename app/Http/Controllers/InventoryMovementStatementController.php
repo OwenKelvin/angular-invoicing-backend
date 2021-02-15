@@ -22,7 +22,7 @@ class InventoryMovementStatementController extends Controller
             ->select(['id', 'quantity', 'created_at as dateTime'])
             ->get()
             ->map(function ($arr) {
-                $arr['type'] = 'sales';
+                $arr['type'] = 'sale';
                 $arr['quantity'] = -$arr['quantity'];
                 return $arr;
             })
@@ -31,7 +31,7 @@ class InventoryMovementStatementController extends Controller
             ->select(['id', 'created_at as dateTime', 'quantity'])
             ->get()
             ->map(function ($arr) {
-                $arr['type'] = 'purchases';
+                $arr['type'] = 'purchase';
                 return $arr;
             })
             ->toArray();
@@ -39,6 +39,8 @@ class InventoryMovementStatementController extends Controller
             array_merge($adjustments, $sales, $purchases)
         );
 
-        return response()->json($combinedMovement);
+        return response()->json(
+            array_merge($product->toArray(), ['inventoryStatement' => $combinedMovement])
+        );
     }
 }

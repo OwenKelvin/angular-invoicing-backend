@@ -159,8 +159,8 @@ class ProductsSeeder extends Seeder
                     'buying_price_currency' => 'KES',
                     'selling_price_currency' => 'KES',
                     'selling_price' => $product['selling_price'],
-                    'min' => $product['max'],
-                    'max' => $product['min']
+                    'min' => $product['min'],
+                    'max' => $product['max']
                 ]);
                 $created_product->purchases()->create([
                     'quantity' => $product['quantity'],

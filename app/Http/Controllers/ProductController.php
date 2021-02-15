@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Requests\ProductStoreRequest;
@@ -40,15 +41,19 @@ class ProductController extends Controller
         ];
     }
 
-    public function update(ProductUpdateRequest $request, Product $product)
+    /**
+     * @param ProductUpdateRequest $request
+     * @param Product $product
+     * @return JsonResponse
+     */
+    public function update(ProductUpdateRequest $request, Product $product): JsonResponse
     {
         $product->update($request->all());
-
-        return [
+        return response()->json([
             'saved' => true,
             'message' => 'Successfully updated Product',
             'data' => Product::find($product->id)
-        ];
+        ]);
     }
 
     public function destroy(ProductDestroyRequest $request, Product $product)
