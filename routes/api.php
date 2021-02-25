@@ -33,6 +33,7 @@ Route::middleware('auth:api')->resource('/purchases', 'PurchaseController');
 Route::middleware('auth:api')->resource('/sales', 'SaleController');
 
 Route::middleware('auth:api')->get('/reports/sales', 'ReportsController@sales');
+Route::middleware('auth:api')->get('/reports/purchases', 'ReportsController@purchases');
 
 Route::middleware('auth:api')->resource('/products/{product}/inventory-quantity', 'InventoryAdjustmentController');
 Route::middleware('auth:api')->get('/products/{product}/inventory-changes-statement', 'InventoryMovementStatementController@index');
